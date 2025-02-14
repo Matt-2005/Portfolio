@@ -1013,6 +1013,9 @@ footer {
         font-size: 30px;
         text-align: center;
     }
+    .right50 img {
+        display: none;
+    }
 
     .home4 {
         padding: 0 25px;
