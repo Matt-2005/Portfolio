@@ -10,37 +10,56 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Fonction pour gérer l'ouverture et la fermeture des réponses
-function toggleAnswer(event) {
-    const question = event.currentTarget;
-    const answer = question.nextElementSibling;
-
-    if (answer.classList.contains('active')) {
-        answer.classList.remove('active');
-        answer.style.maxHeight = null; // Réinitialise la hauteur
-        question.textContent = question.textContent.replace(" --", " ++"); // Remet "++"
-    } else {
-        // Ferme toutes les autres réponses avant d'afficher la nouvelle
-        document.querySelectorAll('.faqAnwser').forEach(ans => {
-            ans.classList.remove('active');
-            ans.style.maxHeight = null;
-        });
-        document.querySelectorAll('.faqQuestion').forEach(q => {
-            q.textContent = q.textContent.replace(" --", " ++"); // Remet "++" pour toutes les autres questions
-        });
-
-        answer.classList.add('active');
-        answer.style.maxHeight = answer.scrollHeight + "px"; // Ajuste la hauteur
-        question.textContent = question.textContent.replace(" ++", " --"); // Change "++" en "--"
-    }
-}
-
-// Ajout des événements pour le toggle au clic et au touchstart
+// Ajout des événements pour le toggle au clic
 document.querySelectorAll('.faqQuestion').forEach(question => {
-    question.addEventListener('click', toggleAnswer);
-    question.addEventListener('touchstart', toggleAnswer);
-});
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
 
+        if (answer.classList.contains('active')) {
+            answer.classList.remove('active');
+            answer.style.maxHeight = null; // Réinitialise la hauteur
+            question.textContent = question.textContent.replace(" --", " ++"); // Remet "++"
+        } else {
+            // Ferme toutes les autres réponses avant d'afficher la nouvelle
+            document.querySelectorAll('.faqAnwser').forEach(ans => {
+                ans.classList.remove('active');
+                ans.style.maxHeight = null;
+            });
+            document.querySelectorAll('.faqQuestion').forEach(q => {
+                q.textContent = q.textContent.replace(" --", " ++"); // Remet "++" pour toutes les autres questions
+            });
+
+            answer.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + "px"; // Ajuste la hauteur
+            question.textContent = question.textContent.replace(" ++", " --"); // Change "++" en "--"
+        }
+    });
+});
+// Ajout des événements pour le toggle au clic
+document.querySelectorAll('.faqQuestion').forEach(question => {
+    question.addEventListener('touchend', () => {
+        const answer = question.nextElementSibling;
+
+        if (answer.classList.contains('active')) {
+            answer.classList.remove('active');
+            answer.style.maxHeight = null; // Réinitialise la hauteur
+            question.textContent = question.textContent.replace(" --", " ++"); // Remet "++"
+        } else {
+            // Ferme toutes les autres réponses avant d'afficher la nouvelle
+            document.querySelectorAll('.faqAnwser').forEach(ans => {
+                ans.classList.remove('active');
+                ans.style.maxHeight = null;
+            });
+            document.querySelectorAll('.faqQuestion').forEach(q => {
+                q.textContent = q.textContent.replace(" --", " ++"); // Remet "++" pour toutes les autres questions
+            });
+
+            answer.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + "px"; // Ajuste la hauteur
+            question.textContent = question.textContent.replace(" ++", " --"); // Change "++" en "--"
+        }
+    });
+});
 
 // document.addEventListener("DOMContentLoaded", () => {
 //     const urlParams = new URLSearchParams(window.location.search);

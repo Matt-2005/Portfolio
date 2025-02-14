@@ -481,6 +481,9 @@ a {
     width: 50%;
 
 }
+.right50 p {
+    display: none;
+}
 .home3Left {
     width: 30%;
     height: 100%;
@@ -831,6 +834,9 @@ footer {
     width: 350px;
     display: flex;
     justify-content: right;
+}
+.phoneFooter {
+    display: none;
 }
 
 
