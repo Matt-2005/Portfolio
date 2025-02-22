@@ -159,7 +159,7 @@
 }
 
 body {
-    background-color: #E9E9E9;
+    background-color: rgba(0,0,0,.04);
 }
 
 a {
@@ -280,7 +280,7 @@ a {
     align-items: center;
 }
 .home1Left p {
-    font-size: 75px;
+    font-size: 80px;
     width: 80%;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
@@ -382,7 +382,7 @@ a {
 }
 .titlePart2 {   
     position: relative;
-    left: 400px;
+    /* left: 400px; */
 }
 
 .home2div {
@@ -516,7 +516,7 @@ a {
     flex-direction: column;
     justify-content: space-between;
     padding-right: 50px;
-    padding-left: 100px;
+    padding-left: 50px;
 }
 .home3Center h2 {
     font-family: 'SF Pro', sans-serif;
@@ -541,9 +541,9 @@ a {
 .home3CenterDown .faqAnwser {
     text-align: right;
     font-family: 'SF Pro', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    color: black;
+    font-weight: 600;
+    font-size: 17px;
+    color: #6e6e73;
     max-height: 0; /* Caché par défaut */
     opacity: 1;
     overflow: hidden; /* Cache le contenu */
@@ -644,35 +644,93 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.home4General {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
     padding-top: 50px;
 }
 
-.home4Projet {
-    border-top: solid 1px white;
-    border-left: solid 1px white;
+.home4General {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 450px;
+    min-height: 775px;
+    position: relative;
+    transition: transform 500ms ease-in-out;
+    transform-style: preserve-3d;
+}
+
+
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.side {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
     border-radius: 25px;
+    padding: 20px 25px;
     display: flex;
     flex-direction: column;
-    width: 450px;
-    padding: 25px;
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    border: solid 2px transparent;
+
+}
+
+
+.side--front {
+    background-color: white;
+    z-index: 1;
+    border: solid 2px transparent;
     transition: 0.2s ease;
-    user-select: none;
-    cursor: pointer;
 }
-.home4Projet .card-button {
-    transition: 0.4s ease;
+.side--front:hover {
+    border-color: black;
 }
-.home4Projet:hover .card-button {
-    color: white;
-    background: black;
+
+.side--back {
+    background-color: white;
+    transform: rotateY(180deg);
+    border: solid 2px transparent;
+    transition: 0.2s ease;
 }
+.side--back:hover {
+    border-color: black;
+}
+
+
+
+.card-title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 1.19rem;
+    color: black;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+.title {
+    color: black;
+    font-family: 'SF Pro', sans-serif;
+    font-stretch: expanded;
+    font-weight: 800;
+    font-size: 25px;
+}
+
 
 .card-button {
     height: 35px;
@@ -683,10 +741,28 @@ a {
     cursor: pointer;
     transform: rotate(-45deg);
     transition: 0.4s ease;
+    color: black;
+    background: transparent;
 }
-.home4Projet:hover {
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+.side--front:hover .card-button {
+    color: white;
+    background-color: black;
+}
+.side--back:hover .card-button {
+    color: white;
+    background-color: black;
+}
+
+.card-button-retour {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: solid 1px black;
+    background: none;
+    cursor: pointer;
+    transition: 0.4s ease;
+    color: black;
+    background: transparent;
 }
 
 .atout {
@@ -702,7 +778,7 @@ a {
 .atoutContainer {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px 10px;
+    gap: 5px;
     padding-bottom: 25px;
 }
 .home4titre {
@@ -722,15 +798,20 @@ a {
     letter-spacing: -5%;
 }
 .home4ProjetLink {
+    margin-top: auto;
+    width: fit-content;
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 }
+
+
 
 .home4ProjetLink a {
     font-family: 'SF Pro', sans-serif;
     font-size: 16px;
-    overflow: hidden;
+    overflow: hidden;   
 }
 
 .home4ProjetLink a::before {
@@ -747,9 +828,37 @@ a {
     transition: transform 0.3s ease;
 }
 
-.home4Projet:hover .home4ProjetLink a::before {
+.card:hover .home4ProjetLink a::before {
     transform: scaleX(1);
 }
+
+
+
+.home4ProjetLinkRetour a {
+    font-family: 'SF Pro', sans-serif;
+    font-size: 16px;
+
+}
+.home4ProjetLinkRetour a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.home4ProjetLinkRetour a:hover::before {
+    transform: scaleX(1);
+}
+
+
+
 
 
 .home4BTN {
@@ -844,6 +953,10 @@ footer {
     .navbarMenu, .navbarSombre {
         display: none;
     }
+    .navbar {
+        height: 70px;
+        background-color: red;
+    }
     .navbarLeft a {
         display: none;
     }
@@ -863,7 +976,10 @@ footer {
         font-size: 15px;
         color: white;
     }
-
+    .home1 {
+        margin-top: -70px;
+        padding-top: 70px;
+    }
     .home1General {
         flex-direction: column;
         width: 100%;
@@ -1022,6 +1138,10 @@ footer {
     }
     .home4General {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: nowrap;
     }
     .home4Projet {
         width: 100%;

@@ -159,7 +159,7 @@
 }
 
 body {
-    background-color: #E9E9E9;
+    background-color: rgba(0,0,0,.04);
 }
 
 a {

@@ -58,39 +58,20 @@ document.querySelectorAll('.faqQuestion').forEach(question => {
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    // Sélectionne toutes les divs de lien
+    const links = document.querySelectorAll(".home4ProjetLink, .home4ProjetLinkRetour");
 
+    links.forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.stopPropagation(); // Empêche la propagation du clic
 
-new Swiper('.card-wrapper', {
-    loop: true,
-    spaceBetween: 30,
+            // Trouve la carte parente
+            const card = link.closest(".card");
 
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
-    },
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-        0: {
-            slidesPerView: 1.25
-        },
-        768: {
-            slidesPerView: 2.25
-        },
-        1024: {
-            slidesPerView: 3.25
-        },  
-    },
-    autoplay: {
-        delay: 3000,
-        pauseOnMouseEnter: true,
-    },
-
+            if (card) {
+                card.classList.toggle("flip"); // Ajoute ou enlève la classe "flip"
+            }
+        });
+    });
 });
-
