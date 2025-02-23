@@ -739,7 +739,7 @@ a {
     border: solid 1px black;
     background: none;
     cursor: pointer;
-    transform: rotate(-45deg);
+    transform: rotate(-30deg);
     transition: 0.4s ease;
     color: black;
     background: transparent;
@@ -747,10 +747,13 @@ a {
 .side--front:hover .card-button {
     color: white;
     background-color: black;
+    transform: rotate(-45deg);
 }
 .side--back:hover .card-button {
     color: white;
     background-color: black;
+    transform: rotate(-45deg);
+
 }
 
 .card-button-retour {
@@ -955,7 +958,6 @@ footer {
     }
     .navbar {
         height: 70px;
-        background-color: red;
     }
     .navbarLeft a {
         display: none;
@@ -1108,7 +1110,7 @@ footer {
     
     .home3CenterDown .faqQuestion {
         text-align: left;
-        font-size: 35px;
+        font-size: 40px;
     }
     .home3CenterDown .faqAnwser {
         text-align: left;
@@ -1126,8 +1128,9 @@ footer {
     .right50 p {
         font-family: 'SF Pro', sans-serif;
         font-weight: 800;
-        font-size: 30px;
+        font-size: 40px;
         text-align: center;
+        display: block;
     }
     .right50 img {
         display: none;
