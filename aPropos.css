@@ -197,6 +197,9 @@ a {
 .navbarLeft img {
     width: 85px;
 }
+.navbarLeft p {
+    display: none;
+}
 
 
 
