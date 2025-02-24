@@ -258,7 +258,7 @@ a {
     width: fit-content;
     position: absolute;
     top: 36%;
-    right: 21%;
+    right: 14%;
 }
 .projet1specialText {
     color: white;
@@ -341,38 +341,105 @@ a {
     border-radius: 25px;
     text-decoration: none;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.2s ease;
+    min-width: 300px;
+}
+.card-list .card-item .card-link .contentContainer {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    padding: 20px 25px;
+    border-radius: 15px;
+    text-decoration: none;
     border: solid 2px transparent;
     transition: 0.2s ease;
-    height: 450px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    border-top: solid 1px rgba(255, 255, 255, 0.5);
+    border-left: solid 1px rgba(255, 255, 255, 0.5);
+    min-height: 700px;
+}
+
+.card-list .card-item .card-link .contentContainer:hover {
+    transform: scale(1.01);
 }
 .card-list .card-item .card-link:hover {
     border-color: black;
+}
+.card-list .card-item .card-link.slide1{
+    background-image: url(assets/media/fondMacos1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.card-list .card-item .card-link.slide2{
+    background-image: url(assets/media/fondMacos2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.card-list .card-item .card-link.slide3{
+    background-image: url(assets/media/fondMacos3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.card-list .card-item .card-link.slide4{
+    background-image: url(assets/media/fondMacos4.png);
+    background-size: cover;
+    background-position: center;
+}
+.card-list .card-item .card-link.slide5{
+    background-image: url(assets/media/fondMacos5.png);
+    background-size: cover;
+    background-position: center;
+}
+.card-list .card-item .card-link.slide6{
+    background-image: url(assets/media/fondMacos6.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.card-list .card-item .card-link.slide7{
+    background-image: url(assets/media/fondMacos7.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 .card-title {
     display: flex;
     gap: 10px;
     align-items: center;
+    padding-bottom: 10px;
 }
 .card-list .card-link .title {
-    color: black;
+    color: white;
     font-family: 'SF Pro', sans-serif;
     font-stretch: expanded;
     font-weight: 800;
     font-size: 25px;
 }
-.card-list .card-link .badge {
-    color: black;
+.card-list .card-link .description {
+    font-family: 'SF Pro', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    padding-bottom: 10px;
+    color: white;
+}
+.atout {
+    color: white;
     padding: 3px 10px;
     font-family: 'SF Pro';
     font-size: 13px;
     font-weight: 400;
-    margin: 16px 0 18px;
     width: fit-content;
     border-radius: 10px;
-    border: solid 1px black;
+    border: solid 0.75px white;
 }
-
+.atoutContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-bottom: 25px;
+}
 .card-list .card-link .card-title {
     font-size: 1.19rem;
     color: black;
@@ -383,15 +450,16 @@ a {
     height: 35px;
     width: 35px;
     border-radius: 50%;
-    border: solid 1px black;
+    border: solid 1px white;
     background: none;
     cursor: pointer;
     transform: rotate(-45deg);
     transition: 0.4s ease;
+    color: white;
 }
 .card-list .card-link:hover .card-button {
-    color: white;
-    background: black;
+    color: black;
+    background: white;
 }
 
 .projet3container {
