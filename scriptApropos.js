@@ -10,18 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Sélectionne la deuxième question et réponse
-    const secondQuestion = document.querySelectorAll('.faqQuestion')[6]; // [1] = deuxième élément
-    const secondAnswer = document.querySelectorAll('.faqAnwser')[6]; // [1] = deuxième élément
-
-    if (secondQuestion && secondAnswer) {
-        secondAnswer.classList.add('active');
-        secondAnswer.style.maxHeight = secondAnswer.scrollHeight + "px"; // Déploie la réponse
-        secondQuestion.textContent = secondQuestion.textContent.replace("++", "--"); // Change "++" en "--"
-    }
-});
-
 document.querySelectorAll('.faqQuestion').forEach(question => {
     question.addEventListener('click', () => {
         const answer = question.nextElementSibling;

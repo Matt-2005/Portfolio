@@ -36,26 +36,6 @@ document.querySelectorAll('.faqQuestion').forEach(question => {
     });
 });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     const urlParams = new URLSearchParams(window.location.search);
-//     const slideIndex = urlParams.get("slide");
-
-//     // Vérifie si l'URL contient "?slide=X" avant de scroller
-//     if (slideIndex !== null) {
-//         const section = document.getElementById("MesProjets");
-//         if (section) {
-//             section.scrollIntoView({ behavior: "smooth" });
-//         }
-
-//         // Attends un peu que la section s'affiche avant d'aller à la bonne slide
-//         setTimeout(() => {
-//             if (typeof swiper !== "undefined") {
-//                 swiper.slideTo(parseInt(slideIndex, 10));
-//             }
-//         }, 500);
-//     }
-// });
-
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -75,3 +55,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+
+let divToObserve =  document.querySelector(".home2");
+
+let options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.25
+}
+
+let observation = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        let textToMove = document.querySelector(".titlePart2")
+        if (entry.isIntersecting) {
+            textToMove.classList.add("active")
+        } else {
+            textToMove.classList.remove("active")
+        }
+    });
+}, options);
+
+observation.observe(divToObserve)

@@ -42,7 +42,7 @@
 }
 @font-face {
     font-family: 'SF Pro';
-    src: url('assets/fonts/SF-Pro-Bold.ttf') format('truetype');
+    src: url('assets/fonts/SF-Pro.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
 }
@@ -149,6 +149,12 @@
     font-weight: 800;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
 
 
 * {
@@ -189,6 +195,9 @@ a {
 
 .navbarLeft img {
     width: 85px;
+}
+.navbarLeft p {
+    display: none;
 }
 
 
@@ -275,7 +284,7 @@ a {
 .projet2container {
     display: flex;
     justify-content: center;
-    padding: 50px 0px;
+    padding-top: 50px;
 }
 .projet2 {
     width: 90%;
@@ -462,47 +471,67 @@ a {
     background: white;
 }
 
+
 .projet3container {
-    padding: 50px 0 250px 0;
-}
-.projet3paralaxText1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 70px;
-    font-weight: 800;
-    color: black;
-    width: 100%;
-    flex-wrap: nowrap;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    -webkit-transform-origin: left;
-    -ms-transform-origin: left;
-    transform-origin: left;
-    -webkit-transform: skewY(5deg);
-    -ms-transform: skewY(5deg);
-    transform: skewY(5deg);
+    transform: rotate(5deg);
+    position: relative;
+    margin: 11.11em 0;
 }
-.projet3paralaxText2 {
+
+.projet3paralaxText1, .projet3paralaxText2{
     font-family: 'Poppins', sans-serif;
-    font-size: 70px;
-    font-weight: 800;
+    font-size: 60px;
+    font-weight: 900;
+    white-space: nowrap;
+    text-align: center;
+    transform: translateX(-50%);
+    line-height: 100%;
+}
+
+
+.projet3paralaxText2 {
     color: transparent;
     -webkit-text-stroke: 1.5px black;
-    overflow: hidden;
-    -webkit-transform-origin: left;
-    -ms-transform-origin: left;
-    transform-origin: left;
-    -webkit-transform: skewY(5deg);
-    -ms-transform: skewY(5deg);
-    transform: skewY(5deg);
 }
-.projet3paralaxText1 ul, .projet3paralaxText2 ul {
-    display: flex;
-    width: fit-content;
-    list-style: none;
 
+
+
+/* 
+.projet3container {
+    padding: 50px 0 250px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
 }
-.projet3paralaxText1 li, .projet3paralaxText2 li {
-    flex-shrink: 0;
+
+.projet3paralaxText1, .projet3paralaxText2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 70px;
+    font-weight: 800;
+    white-space: nowrap; /* Force le texte à rester sur une seule ligne
+    position: absolute;
+    text-align: center;
 }
+
+.projet3paralaxText1 {
+    color: black;
+    transform: translateX(-50%) rotate(5deg);
+    left: 50%;
+}
+
+.projet3paralaxText2 {
+    color: transparent;
+    -webkit-text-stroke: 1.5px black;
+    transform: translateX(-50%) rotate(5deg);
+    left: 50%;
+} */
+
+
 
 
 .projet4container {
@@ -607,9 +636,9 @@ a {
 }
 .projet5specialText {
     font-family: 'SF Pro', sans-serif;
-    font-stretch: expanded;
-    font-weight: 300;
-    font-size: 30px;
+    font-stretch: condensed;
+    font-weight: 400;
+    font-size: 40px;
 }
 .projet5Text {
     font-family: 'SF Pro', sans-serif;
@@ -669,16 +698,19 @@ a {
 }
 
 
-
 footer {
+    display: flex;
+
+}
+.bigFooter {
     display: flex;
     background-color: #222222;
     justify-content: space-between;
     height: 275px;
     padding: 0px 100px;
     align-items: center;
+    width: 100%;
 }
-
 .footerLeft {
     width: 350px;
 }
@@ -705,4 +737,100 @@ footer {
     width: 350px;
     display: flex;
     justify-content: right;
+}
+.phoneFooter {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .navbarMenu, .navbarSombre {
+        display: none;
+    }
+    .navbar {
+        height: 70px;
+    }
+    .navbarLeft a {
+        display: none;
+    }
+    .navbarLeft p {
+        display: block;
+        font-family: 'SF Pro', sans-serif;
+        font-weight: 800;
+        font-size: 30px;
+        padding-left: 20px;
+        color: white;
+    }
+    .navbarContact {
+        padding: 7px 15px;
+        font-size: 5px;
+        background-color: white;
+    }
+    .navbarContact p {
+        font-size: 15px;
+        color: black;
+    }
+
+
+
+
+    .projet1 {
+        margin-top: -70px;
+    }
+    .projet1textContainer {
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+
+
+
+    .projet2 {
+        width: 100%;
+    }
+    .projet2top {
+        padding: 0 20px;
+    }
+    .projet2top h2 {
+        font-size: 50px;
+    }
+    .projet2bottom {
+        padding: 25px 20px;
+    }
+
+    .card-wrapper {
+        padding: 0;
+    }
+
+
+
+    .bigFooter {
+        display: none;
+    }
+
+    .phoneFooter {
+        display: block;
+        display: flex;
+        flex-direction: column;
+        background-color: #222222;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        padding: 50px 25px;
+    }
+    .footerLeft {
+        text-align: center;
+        width: fit-content;
+        font-weight: 300;
+        font-size: 16px;
+    }
+    .footerRight {
+        justify-content: center;
+        width: fit-content;
+        color: white;
+        font-family: 'SF Pro', sans-serif;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 300;
+    }
 }
