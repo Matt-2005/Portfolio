@@ -801,6 +801,34 @@ footer {
         padding: 0;
     }
 
+    .projet3container {
+        margin: 100px 0;
+    }
+    .projet3paralaxText1, .projet3paralaxText2 {
+        font-size: 35px;
+    }
+
+    .projet5container{
+        padding: 0 20px;
+    }
+    .projet5contact {
+        flex-direction: column-reverse;
+        gap: 25px;
+        width: 100%;
+    }
+    .projet5contactLeft {
+        width: 100%;
+    }
+    .projet5map {
+        width: 100%;
+    }
+    .projet5contactRight {
+        width: 100%;
+    }
+    .projet5contactRight p {
+        font-size: 50px;
+    }
+
 
 
     .bigFooter {
