@@ -362,6 +362,7 @@ a {
     flex-direction: column;
     align-items: center;
     background-color: black;
+    position: relative;
 }
 
 
@@ -369,6 +370,7 @@ a {
     padding-top: 75px;
     padding-bottom: 50px;
     width: 90%;
+    z-index: 1;
 }
 .home2title p {
     font-family: 'SF Pro', sans-serif;
@@ -397,7 +399,7 @@ a {
     justify-content: space-between;
     width: 90%;
     padding-bottom: 100px;
-
+    z-index: 1;
 }
 
 .home2divLeft {
@@ -413,6 +415,7 @@ a {
     width: 90%;
     border-radius: 25px;
     background-color: #E9E9E9;
+
 }
 .home2LeftBox p{
     color: black;
@@ -910,6 +913,29 @@ a {
 .home4BTN:hover p::before {
     transform: scaleX(1);
 }
+
+
+
+
+.svg-container {
+    position: absolute;
+    top: calc(120vh);
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 579px;
+
+}
+
+.svg-container .sgv {
+    height: 100% ;
+    z-index: 0;
+}
+
+
+
 
 
 footer {

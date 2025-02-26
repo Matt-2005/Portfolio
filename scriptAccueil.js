@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
     // Sélectionne la deuxième question et réponse
     const secondQuestion = document.querySelectorAll('.faqQuestion')[1]; // [1] = deuxième élément
@@ -77,3 +79,29 @@ let observation = new IntersectionObserver((entries) => {
 }, options);
 
 observation.observe(divToObserve)
+
+
+let svg = document.querySelector("svg")
+let path = svg.querySelector("path");
+
+const pathLength = path.getTotalLength();
+
+gsap.set(path, {strokeDasharray: pathLength});
+
+gsap.fromTo(
+    path, 
+    {
+        strokeDashoffset: pathLength,
+    }, 
+    {
+        strokeDashoffset: 0,
+        duration: 2,
+        ease: "none",
+        // scrollTrigger: {
+        //     trigger: ".svg-container",
+        //     start: "top top",
+        //     end: "bottom bottom",
+        //     scrub: 1,
+        // },
+    }
+);
