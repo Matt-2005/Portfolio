@@ -82,26 +82,20 @@ observation.observe(divToObserve)
 
 
 
-let divToObserveForPhone =  document.querySelector(".home2");
+const menuBTN = document.querySelector(".navbarAccueilPhone")
+const menuMobile = document.querySelector(".slideNavBar")
+const navbarLeftPhone = document.querySelector(".navbarLeftPhone")
+const navbarAccueilPhone = document.querySelector(".navbarAccueilPhone")
+const navbarRightPhone = document.querySelector(".navbarRightPhone")
+const navbarSombrePhone = document.querySelector(".navbarSombrePhone")
 
-let optionsForPhone = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.25
-}
-
-let observationForPhone = new IntersectionObserver((entriesPhone) => {
-    entriesPhone.forEach(entry => {
-        let textToMove = document.querySelector(".titlePart2Phone")
-        if (entry.isIntersecting) {
-            textToMove.classList.add("active")
-        } else {
-            textToMove.classList.remove("active")
-        }
-    });
-}, optionsForPhone);
-
-observationForPhone.observe(divToObserveForPhone)
+menuBTN.addEventListener('click', function() {
+    menuMobile.classList.toggle("active"),
+    navbarLeftPhone.classList.toggle("active"),
+    navbarAccueilPhone.classList.toggle("active"),
+    navbarRightPhone.classList.toggle("active"),
+    navbarSombrePhone.classList.toggle("active")
+})
 
 
 // let svg = document.querySelector("svg")
