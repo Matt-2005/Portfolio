@@ -1,3 +1,7 @@
+import { injectSpeedInsights } from '@vercel/speed-insights';
+
+injectSpeedInsights();
+
 document.addEventListener("DOMContentLoaded", () => {
     // Sélectionne la deuxième question et réponse
     const secondQuestion = document.querySelectorAll('.faqQuestion')[1]; // [1] = deuxième élément
