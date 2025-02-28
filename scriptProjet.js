@@ -1,6 +1,3 @@
-import { injectSpeedInsights } from '@vercel/speed-insights';
-
-injectSpeedInsights();
 
 new Swiper('.card-wrapper', {
     loop: true,
