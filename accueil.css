@@ -1058,7 +1058,7 @@ footer {
         padding: 50px 25px 0 25px;
         opacity: 0;
         transition: 0.4s;
-        gap: 50px;
+        gap: 25px;
         justify-content: center;
     }
 
