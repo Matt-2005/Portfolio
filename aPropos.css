@@ -1006,6 +1006,145 @@ footer {
     display: none;
 }
 
+@media (max-width: 750px) {
+
+    .navbar {
+        display: none;
+    }
+    .navbarPhone {
+        display: block;
+    }
+    .navbarContainer {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+    }
+    .navbarPhone {
+        display: flex;
+        height: 70px;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 25px;
+        z-index: 3;
+    }
+
+    .navbarLeftPhone a {
+        display: block;
+        display: block;
+        font-family: 'SF Pro', sans-serif;
+        font-weight: 800;
+        font-size: 30px;
+        color: black;
+    }
+    .navbarRightPhone{
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 10px;
+
+    }
+    .navbarAccueilPhone, .navbarSombrePhone {
+        padding: 7px 15px;
+        margin: 0;
+        font-size: 5px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarSombrePhone {
+        border-radius: 50%;
+        height: 43px;
+        width: 43px;
+    }
+
+    .navbarAccueilPhone p {
+        font-size: 15px;
+        color: white;
+    }
+    .navbarSombrePhone a{
+        color: white;
+    }
+
+    .slideNavBar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100svh;
+        z-index: 2;
+        background-color: #222222;
+        padding: 50px 25px 0 25px;
+        opacity: 0;
+        transition: 0.4s;
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .slideNavBar p {
+        font-family: 'SF Pro', sans-serif;
+        font-size: 25px;
+        font-stretch: expanded;
+        font-weight: 800;
+        color: white;
+        padding-bottom: 10px;
+    }
+    .slideNavBar a {
+        font-family: 'SF Pro';
+        font-size: 17px;
+        font-weight: 300;
+        color: white;
+        padding-bottom: 5px;
+        width: fit-content;
+    }
+    .slideNavBar a::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+    
+    a:hover::before {
+        transform: scaleX(1);
+    }
+    
+    .planDuSite, .meilleursProjets, .meSuivre {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slideNavBar.active {
+        left: 0;
+        opacity: 0.98;
+    }
+
+    .navbarLeftPhone.active a{
+        color: white !important;
+    }
+    .navbarAccueilPhone.active{
+        background-color: white !important;
+    }
+    .navbarSombrePhone.active {
+        background-color: white;
+    }
+    .navbarSombrePhone.active a {
+        color: black;
+    }
+    .navbarRightPhone.active p {
+        color: black !important;
+    }
+
+}
+
 
 @media (max-width: 480px) {
     .navbar {

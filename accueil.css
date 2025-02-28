@@ -286,7 +286,7 @@ a[href^="tel"] {
     align-items: center;
 }
 .home1Left p {
-    font-size: 80px;
+    font-size: 5.6vw;
     width: 80%;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
@@ -313,7 +313,7 @@ a[href^="tel"] {
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
-    font-size: 60px;
+    font-size: 4vw;
     text-align: center;
 }
 
@@ -381,7 +381,7 @@ a[href^="tel"] {
 .home2title p {
     font-family: 'SF Pro', sans-serif;
     font-weight: 300;
-    font-size: 100px;
+    font-size: 7vw;
     color: white;
     line-height: 1;
 }
@@ -427,7 +427,7 @@ a[href^="tel"] {
     color: black;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
-    font-size: 60px;
+    font-size: 4.5vw;
     text-align: center;
 }
 .home2LeftBox img{
@@ -450,16 +450,16 @@ a[href^="tel"] {
 .namePart1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
-    font-size: 150px; /* Taille de "LE" */
+    font-size: 10vw; /* Taille de "LE" */
     color: transparent; /* Texte transparent */
     -webkit-text-stroke: 1.5px #E9E9E9; /* Contour clair */
 }
 .namePart2 {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
-    font-size: 100px;
+    font-size: 7vw;
     position: relative;
-    left: 100px;
+    left: 18%;
     width: fit-content;
 }
 .textMatthewLE p {
@@ -471,24 +471,21 @@ a[href^="tel"] {
 }
 
 .home3 {
-    /* border: solid 2px red; */
     display: flex;
     justify-content: center;
 }
 .home3General {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: 100%;
     width: 100%;
     margin-bottom: 100px;
+    flex-wrap: wrap;
 }
 .left50 {
     display: flex;
     width: 50%;
-    /* border: solid 2px purple; */
     justify-content: flex-end;
-
-
 }
 .right50 {
     display: flex;
@@ -500,6 +497,7 @@ a[href^="tel"] {
 }
 .home3Left {
     width: 30%;
+    min-width: 180px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -531,6 +529,7 @@ a[href^="tel"] {
     justify-content: space-between;
     padding-right: 50px;
     padding-left: 50px;
+    min-width: 350px;
 }
 .home3Center h2 {
     font-family: 'SF Pro', sans-serif;
@@ -595,6 +594,211 @@ a[href^="tel"] {
     -webkit-transform: skewY(-3deg);
     -ms-transform: skewY(-3deg);
     transform: skewY(-3deg);
+}
+
+@media (max-width: 1300px) {
+    .home3Left {
+        display: none;
+    }
+    .home3Center {
+        width: 100%;
+    }
+}
+@media (max-width: 750px) {
+
+    .navbar {
+        display: none;
+    }
+    .navbarPhone {
+        display: block;
+    }
+    .navbarContainer {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+    }
+    .navbarPhone {
+        display: flex;
+        height: 70px;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 25px;
+        z-index: 3;
+    }
+
+    .navbarLeftPhone a {
+        display: block;
+        display: block;
+        font-family: 'SF Pro', sans-serif;
+        font-weight: 800;
+        font-size: 30px;
+        color: black;
+    }
+    .navbarRightPhone{
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 10px;
+
+    }
+    .navbarAccueilPhone, .navbarSombrePhone {
+        padding: 7px 15px;
+        margin: 0;
+        font-size: 5px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarSombrePhone {
+        border-radius: 50%;
+        height: 43px;
+        width: 43px;
+    }
+
+    .navbarAccueilPhone p {
+        font-size: 15px;
+        color: white;
+    }
+    .navbarSombrePhone a{
+        color: white;
+    }
+
+    .slideNavBar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100svh;
+        z-index: 2;
+        background-color: #222222;
+        padding: 50px 25px 0 25px;
+        opacity: 0;
+        transition: 0.4s;
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .slideNavBar p {
+        font-family: 'SF Pro', sans-serif;
+        font-size: 25px;
+        font-stretch: expanded;
+        font-weight: 800;
+        color: white;
+        padding-bottom: 10px;
+    }
+    .slideNavBar a {
+        font-family: 'SF Pro';
+        font-size: 17px;
+        font-weight: 300;
+        color: white;
+        padding-bottom: 5px;
+        width: fit-content;
+    }
+    .slideNavBar a::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+    
+    a:hover::before {
+        transform: scaleX(1);
+    }
+    
+    .planDuSite, .meilleursProjets, .meSuivre {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slideNavBar.active {
+        left: 0;
+        opacity: 0.98;
+    }
+
+    .navbarLeftPhone.active a{
+        color: white !important;
+    }
+    .navbarAccueilPhone.active{
+        background-color: white !important;
+    }
+    .navbarSombrePhone.active {
+        background-color: white;
+    }
+    .navbarSombrePhone.active a {
+        color: black;
+    }
+    .navbarRightPhone.active p {
+        color: black !important;
+    }
+
+    
+
+    .home1General {
+        flex-direction: column;
+    }
+    .home1Left {
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 25px;
+        padding-top: 50px;
+    }
+    .home1Left p {
+        text-align: center;
+        font-size: 6.6vw;
+    }
+    .home1Right {
+        width: 100%;
+        flex-grow: 1;
+        padding-bottom: 20px;
+    }
+    .home1RightBox {
+        height: 100%;
+    }
+
+
+
+    .home3General {
+        flex-direction: column;
+        align-items: center;
+    }
+    .left50 {
+        width: 100%;
+        padding-bottom: 25px;
+    }
+    .right50 {
+        width: 90%;
+    }
+    .right50 img {
+        border-radius: 25px;
+    }
+
+    .home2div {
+        flex-direction: column-reverse;
+        gap: 25px;
+    }
+    .home2divLeft {
+        width: 100%;
+    }
+    .home2LeftBox {
+        width: 100%;
+    }
+    .home2divRight {
+        width: 100%;
+    }
+    .namePart2 {
+        left: 10%;
+    }
+
 }
 
 
