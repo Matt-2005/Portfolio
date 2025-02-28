@@ -178,6 +178,7 @@ a[href^="tel"] {
 }
 
 
+
 .navbarContainer {
     display: flex;
     justify-content: center;
@@ -186,8 +187,9 @@ a[href^="tel"] {
 .navbar {
     justify-content: space-between;
     height: 100px;
-    width: 95%;
+    width: 100%;
     z-index: 1;
+    padding: 0 25px;
 }
 
 
@@ -200,13 +202,13 @@ a[href^="tel"] {
 .navbarLeft img {
     width: 85px;
 }
-.navbarLeft p {
+.navbarPhone {
     display: none;
 }
 
 
 
-.navbarContact{
+.navbarAccueil, .navbarAPropos, .navbarProjets{
     border-radius: 50px;
     background-color: white;
     padding-left: 25px;
@@ -217,13 +219,13 @@ a[href^="tel"] {
     margin-right: 10px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
-.navbarContact p{
+.navbarAccueil p, .navbarAPropos p, .navbarProjets p{
     font-size: 18px;
     font-family: 'SF Pro', sans-serif;
     font-weight: 300;
 }
 
-.navbarMenu{
+.navbarAccueilPhone{
     border-radius: 50px; 
     background-color: white;
     padding-left: 25px;
@@ -234,7 +236,7 @@ a[href^="tel"] {
     margin-right: 10px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
-.navbarMenu p{
+.navbarAccueilPhone p{
     font-size: 18px;
     color: black;
     font-family: 'SF Pro', sans-serif;
@@ -256,6 +258,9 @@ a[href^="tel"] {
     width: 25px;
     height: 25px;
     object-fit: contain;
+}
+.slideNavBar {
+    display: none;
 }
 
 
@@ -818,38 +823,170 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .navbarMenu, .navbarSombre {
+
+        /* .navbar {
+            height: 70px;
+        }
+        .navbarLeft a {
+            display: none;
+        }
+        .navbarLeft p {
+            display: block;
+            font-family: 'SF Pro', sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+            padding-left: 20px;
+            color: white;
+        }
+        .navbarContact {
+            padding: 7px 15px;
+            font-size: 5px;
+            background-color: white;
+        }
+        .navbarContact p {
+            font-size: 15px;
+            color: black;
+        }
+        .navbar {
+            opacity: 0;
+            animation: fadeInUpNavbar 0.6s ease-in-out 2s forwards;
+        } */
+
+
+    .navbar {
         display: none;
     }
-    .navbar {
+    .navbarContainer {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+    }
+    .navbarPhone {
+        display: flex;
         height: 70px;
-    }
-    .navbarLeft a {
-        display: none;
-    }
-    .navbarLeft p {
-        display: block;
-        font-family: 'SF Pro', sans-serif;
-        font-weight: 800;
-        font-size: 30px;
-        padding-left: 20px;
-        color: white;
-    }
-    .navbarContact {
-        padding: 7px 15px;
-        font-size: 5px;
-        background-color: white;
-    }
-    .navbarContact p {
-        font-size: 15px;
-        color: black;
-    }
-    .navbar {
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 25px;
+        z-index: 3;
         opacity: 0;
         animation: fadeInUpNavbar 0.6s ease-in-out 2s forwards;
     }
 
+    .navbarLeftPhone a {
+        display: block;
+        display: block;
+        font-family: 'SF Pro', sans-serif;
+        font-weight: 800;
+        font-size: 30px;
+        color: white;
+    }
+    .navbarRightPhone{
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 10px;
 
+    }
+    .navbarAccueilPhone, .navbarSombrePhone {
+        padding: 7px 15px;
+        margin: 0;
+        font-size: 5px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarSombrePhone {
+        border-radius: 50%;
+        height: 43px;
+        width: 43px;
+    }
+
+    .navbarAccueilPhone p {
+        font-size: 15px;
+        color: black;
+    }
+    .navbarSombrePhone a{
+        color: black;
+        font-family: "Material Symbols Rounded";
+    }
+
+    .slideNavBar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100svh;
+        z-index: 2;
+        background-color: #222222;
+        padding: 50px 25px 0 25px;
+        opacity: 0;
+        transition: 0.4s;
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .slideNavBar p {
+        font-family: 'SF Pro', sans-serif;
+        font-size: 25px;
+        font-stretch: expanded;
+        font-weight: 800;
+        color: white;
+        padding-bottom: 10px;
+    }
+    .slideNavBar a {
+        font-family: 'SF Pro';
+        font-size: 17px;
+        font-weight: 300;
+        color: white;
+        padding-bottom: 5px;
+        width: fit-content;
+    }
+    .slideNavBar a::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+    
+    a:hover::before {
+        transform: scaleX(1);
+    }
+    
+    .planDuSite, .meilleursProjets, .meSuivre {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slideNavBar.active {
+        left: 0;
+        opacity: 0.98;
+    }
+
+    .navbarLeftPhone.active a{
+        color: white !important;
+    }
+    .navbarAccueilPhone.active{
+        background-color: white !important;
+    }
+    .navbarSombrePhone.active {
+        background-color: white;
+    }
+    .navbarSombrePhone.active a {
+        color: black;
+    }
+    .navbarRightPhone.active p {
+        color: black !important;
+    }
 
 
 

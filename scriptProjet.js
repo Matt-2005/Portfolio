@@ -86,3 +86,18 @@ gsap.fromTo(
         // },
     }
 );
+
+const menuBTN = document.querySelector(".navbarAccueilPhone")
+const menuMobile = document.querySelector(".slideNavBar")
+const navbarLeftPhone = document.querySelector(".navbarLeftPhone")
+const navbarAccueilPhone = document.querySelector(".navbarAccueilPhone")
+const navbarRightPhone = document.querySelector(".navbarRightPhone")
+const navbarSombrePhone = document.querySelector(".navbarSombrePhone")
+
+menuBTN.addEventListener('click', function() {
+    menuMobile.classList.toggle("active"),
+    navbarLeftPhone.classList.toggle("active"),
+    navbarAccueilPhone.classList.toggle("active"),
+    navbarRightPhone.classList.toggle("active"),
+    navbarSombrePhone.classList.toggle("active")
+})
