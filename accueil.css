@@ -42,7 +42,7 @@
 }
 @font-face {
     font-family: 'SF Pro';
-    src: url('assets/fonts/SF-Pro-Bold.ttf') format('truetype');
+    src: url('assets/fonts/SF-Pro.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
 }
@@ -1058,8 +1058,11 @@ footer {
         padding-bottom: 25px;
         width: 100%;
     }
+    .titlePart2.active {
+        left: auto;
+    }
     .home2title p{
-        font-size: 40px;
+        font-size: 35px;
     }
     .titlePart1 {
         position: relative;
@@ -1171,7 +1174,7 @@ footer {
     }
 
     .home4 {
-        padding: 0 25px;
+        padding: 50px 25px 0 25px;
     }
     .home4General {
         flex-direction: column;
@@ -1189,6 +1192,12 @@ footer {
     .home3InfiniteText ul {
         animation: scroll3 12s linear infinite;
     }
+
+    .card {
+        min-height: 900px;
+    }
+
+
     .bigFooter {
         display: none;
     }

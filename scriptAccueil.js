@@ -81,27 +81,50 @@ let observation = new IntersectionObserver((entries) => {
 observation.observe(divToObserve)
 
 
-let svg = document.querySelector("svg")
-let path = svg.querySelector("path");
 
-const pathLength = path.getTotalLength();
+let divToObserveForPhone =  document.querySelector(".home2");
 
-gsap.set(path, {strokeDasharray: pathLength});
+let optionsForPhone = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.25
+}
 
-gsap.fromTo(
-    path, 
-    {
-        strokeDashoffset: pathLength,
-    }, 
-    {
-        strokeDashoffset: 0,
-        duration: 2,
-        ease: "none",
-        // scrollTrigger: {
-        //     trigger: ".svg-container",
-        //     start: "top top",
-        //     end: "bottom bottom",
-        //     scrub: 1,
-        // },
-    }
-);
+let observationForPhone = new IntersectionObserver((entriesPhone) => {
+    entriesPhone.forEach(entry => {
+        let textToMove = document.querySelector(".titlePart2Phone")
+        if (entry.isIntersecting) {
+            textToMove.classList.add("active")
+        } else {
+            textToMove.classList.remove("active")
+        }
+    });
+}, optionsForPhone);
+
+observationForPhone.observe(divToObserveForPhone)
+
+
+// let svg = document.querySelector("svg")
+// let path = svg.querySelector("path");
+
+// const pathLength = path.getTotalLength();
+
+// gsap.set(path, {strokeDasharray: pathLength});
+
+// gsap.fromTo(
+//     path, 
+//     {
+//         strokeDashoffset: pathLength,
+//     }, 
+//     {
+//         strokeDashoffset: 0,
+//         duration: 2,
+//         ease: "none",
+//         // scrollTrigger: {
+//         //     trigger: ".svg-container",
+//         //     start: "top top",
+//         //     end: "bottom bottom",
+//         //     scrub: 1,
+//         // },
+//     }
+// );
