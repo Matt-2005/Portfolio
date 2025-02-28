@@ -1100,10 +1100,6 @@ footer {
         display: flex;
         flex-direction: column;
     }
-    .slideNavBar .planDuSite a:last-child {
-        font-family: "Material Symbols Rounded";
-        font-size: 24px;
-    }
 
     .slideNavBar.active {
         left: 0;
