@@ -173,6 +173,10 @@ a {
     color: #000;
     text-decoration: none;
 }
+a[href^="tel"] {
+    color: white !important;
+}
+
 
 .navbarContainer {
     display: flex;
