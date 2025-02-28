@@ -256,6 +256,11 @@ a {
 
 
 
+.loader {
+    height: 100svh;
+    background-color: black;
+}
+
 .projet1 {
     margin-top: -100px;
     height: 100svh;
@@ -273,7 +278,6 @@ a {
     font-family: 'SF Pro', sans-serif;
     font-weight: 200;
     opacity: 0;
-    transform: translateY(20px);
     animation: fadeInUp 0.6s ease-in-out forwards;
 }
 
@@ -742,16 +746,25 @@ a {
     align-items: center;
     width: 60%;
     height: 579px;
+    
 
 }
 
 .svg-container .sgv {
     height: 100% ;
-    /* z-index: 0; */
 }
 
 .svg-container-phone {
     display: none;
+}
+
+@keyframes fadeOutSVG {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 
@@ -826,33 +839,36 @@ footer {
         font-size: 15px;
         color: black;
     }
-    .navbar {
+    /* .navbar {
         opacity: 0;
         animation: fadeInUpNavbar 0.6s ease-in-out 2s forwards;
-    }
-    @keyframes fadeInUpNavbar {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
+    } */
+
 
 
 
 
     .projet1 {
         margin-top: -70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .projet1textContainer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        /* position: absolute; */
+        /* bottom: 0; */
+        left: auto;
         top:auto;
         padding-bottom: 20px;
         padding-left: 20px;
+        position: static;
+
     }
+
+    /* .projet1specialText, .projet1designedBy {
+        animation: none;
+        opacity: 1;
+    } */
     .projet1specialText:nth-child(1) {
         animation-delay: 2s;
         font-size: 60px;
@@ -872,17 +888,25 @@ footer {
         display: none;
     }
     .svg-container-phone {
-        position: absolute;
-        top: calc(50% - (201px / 2));
-        left: 0;
+        /* position: absolute;
+        top: calc(50% - (201px / 2)); */
+        /* left: 0; */
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
         height: 201px;
-    
+        flex-grow: 1;
+        /* animation: fadeOutSVG 0.6s ease-in-out 2.2s forwards; */
     }
-    
+    @keyframes fadeInUpNavbar {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
     .svg-container-phone .sgv {
         height: 100% ;
         /* z-index: 0; */

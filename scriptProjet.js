@@ -39,16 +39,16 @@ window.addEventListener("scroll", function() {
     document.querySelector(".projet3paralaxText2").style.transform = `translateX(calc(-50% - ${scrollY * 0.1}px))`;
 });
 
-let svg = document.querySelector("svg")
-let path = svg.querySelector("path");
+let svgmen = document.querySelector(".svg-men")
+let pathmen = svgmen.querySelector("path");
 
-const pathLength = path.getTotalLength();
-gsap.set(path, {strokeDasharray: pathLength});
+const pathLengthMen = pathmen.getTotalLength();
+gsap.set(pathmen, {strokeDasharray: pathLengthMen});
 
 gsap.fromTo(
-    path, 
+    pathmen, 
     {
-        strokeDashoffset: pathLength,
+        strokeDashoffset: pathLengthMen,
     }, 
     {
         strokeDashoffset: 0,
@@ -73,7 +73,7 @@ gsap.fromTo(
     pathPhone, 
     {
         strokeDashoffset: pathLengthPhone,
-    }, 
+    },  
     {
         strokeDashoffset: 0,
         duration: 5,
@@ -86,9 +86,3 @@ gsap.fromTo(
         // },
     }
 );
-
-document.body.style.overflow = "hidden"; // Désactive le scroll
-
-setTimeout(() => {
-    document.body.style.overflow = "auto"; // Réactive le scroll après 2.6s
-}, 2600);
