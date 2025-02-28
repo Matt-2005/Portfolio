@@ -181,8 +181,9 @@ a[href^="tel"] {
 .navbar {
     justify-content: space-between;
     height: 100px;
-    width: 95%;
+    width: 100%;
     z-index: 1;
+    padding: 0 25px;
 }
 
 
@@ -195,13 +196,13 @@ a[href^="tel"] {
 .navbarLeft img {
     width: 85px;
 }
-.navbarLeft p {
+.navbarPhone {
     display: none;
 }
 
 
 
-.navbarContact{
+.navbarAccueil, .navbarAPropos, .navbarProjets{
     border-radius: 50px;
     background-color: white;
     padding-left: 25px;
@@ -212,13 +213,13 @@ a[href^="tel"] {
     margin-right: 10px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
-.navbarContact p{
+.navbarAccueil p, .navbarAPropos p, .navbarProjets p{
     font-size: 18px;
     font-family: 'SF Pro', sans-serif;
     font-weight: 300;
 }
 
-.navbarMenu{
+.navbarAccueilPhone{
     border-radius: 50px; 
     background-color: white;
     padding-left: 25px;
@@ -229,7 +230,7 @@ a[href^="tel"] {
     margin-right: 10px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
-.navbarMenu p{
+.navbarAccueilPhone p{
     font-size: 18px;
     color: black;
     font-family: 'SF Pro', sans-serif;
@@ -987,28 +988,31 @@ footer {
 
 
 @media (max-width: 480px) {
-    .navbarMenu, .navbarSombre {
-        display: none;
-    }
     .navbar {
-        height: 70px;
-    }
-    .navbarLeft a {
         display: none;
     }
-    .navbarLeft p {
+    .navbarPhone {
+        display: flex;
+        height: 70px;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 25px;
+    }
+    .navbarLeftPhone a {
+        display: block;
         display: block;
         font-family: 'SF Pro', sans-serif;
         font-weight: 800;
         font-size: 30px;
-        padding-left: 20px;
     }
-    .navbarContact {
+
+    .navbarAccueilPhone {
         padding: 7px 15px;
         font-size: 5px;
         background-color: black;
     }
-    .navbarContact p {
+    .navbarRightPhone p {
         font-size: 15px;
         color: white;
     }
